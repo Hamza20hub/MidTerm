@@ -11,9 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-/**
- * Created by mrahman on 04/02/18.
- */
 
 public class ConnectToSqlDB {
 
@@ -83,6 +80,12 @@ public class ConnectToSqlDB {
         return dataList;
     }
 
+    /**
+     *
+     * @param ArrayData {'Tets1','Tets2','Tets3','Tets4'}
+     * @param tableName EMployee
+     * @param columnName EMP_Name
+     */
     public void insertDataFromArrayToSqlTable(int [] ArrayData, String tableName, String columnName)
     {
         try {
@@ -122,6 +125,8 @@ public class ConnectToSqlDB {
         }
     }
 
+    //SELECT * FROM EMPLOYEE
+    // directDatabaseQueryExecute(query, "EMP_ID");
     public List<String> directDatabaseQueryExecute(String passQuery,String dataColumn)throws Exception{
         List<String> data = new ArrayList<String>();
 
@@ -161,7 +166,7 @@ public class ConnectToSqlDB {
         }
     }
 
-
+    // insert data and read the date that you inserted
     public void insertProfileToSqlTable(String tableName, String columnName1, String columnName2)
     {
         try {

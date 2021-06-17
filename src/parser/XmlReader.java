@@ -19,7 +19,8 @@ import java.util.List;
  */
 
 public class XmlReader {
-	
+
+	// Read the data form XML file and print as the data inserted to the xml
 	public List<Student> parseData(String tagName,String path) throws ParserConfigurationException, SAXException, IOException{
 		
 	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

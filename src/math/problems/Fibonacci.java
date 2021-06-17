@@ -8,5 +8,14 @@ public class Fibonacci {
          */
 
 
+
+
+    }
+
+    public static int length(){
+        int length = 0 ;
+
+        //Implement: check the length of the numbers
+        return length;
     }
 }
