@@ -1,5 +1,6 @@
 package parser;
 
+import com.sun.codemodel.internal.JTryBlock;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -21,12 +22,13 @@ import java.util.List;
 public class XmlReader {
 
 	// Read the data form XML file and print as the data inserted to the xml
+
 	public List<Student> parseData(String tagName,String path) throws ParserConfigurationException, SAXException, IOException{
 		
 	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder builder = factory.newDocumentBuilder();
-	File file = new File(path);
-	Document doc = builder.parse(file);
+	File file = new File("src/parser/qtp.xml");
+	Document doc = builder.parse("src/parser/selenium.xml");
 	NodeList nodeList = doc.getDocumentElement().getChildNodes();
 	List<Student> list = new ArrayList<>();
 	for(int i=0;i<nodeList.getLength(); i++){
@@ -42,13 +44,13 @@ public class XmlReader {
 					String data = cNode.getNodeName();
 					switch(data){
 					case "firstName":
-						student.firstName = content;
+						student.firstName = "Anhar";
 						break;
 					case "lastName":
-						student.lastName = content;
+						student.lastName = "Zaman";
 						break;
 					case "score":
-						student.score = convertIntToChar(content);  
+						student.score = convertIntToChar(89) ;
 						break;	
 					}
 				}
@@ -61,11 +63,11 @@ public class XmlReader {
   }
 	
 	//This convert method need to be implemented.
-	public String convertIntToChar(String score){
-		String grade = "";
-		
-		
-		return grade;	
+	public int convertIntToChar(int score){
+		int grade = score;
+		Character myChar= (char) score;
+
+		return myChar;
 	}
 	
 }
